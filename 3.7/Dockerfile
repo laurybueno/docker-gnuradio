@@ -25,4 +25,10 @@ RUN pybombs prefix init /usr/local -R gnuradio-stable
 
 RUN rm -rf /var/lib/apt/lists/*
 
-CMD gnuradio-companion
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10
+
+COPY run.sh /run.sh
+
+RUN chmod +x /usr/local/setup_env.sh /run.sh
+
+CMD /run.sh
