@@ -1,11 +1,5 @@
 #!/bin/bash
 
-xhost +local:docker
+alias grc37='./scripts/grc37.sh'
 
-docker run -it \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -e DISPLAY \
-    --device /dev/dri \
-    --device /dev/snd \
-    --device /dev/bus/usb \
-    laury/gnuradio:3.7
+alias grc-publish='./scripts/publish.sh'
